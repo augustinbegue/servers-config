@@ -1,11 +1,11 @@
 # Get Postgres Official repo
-apt install wget ca-certificates
+apt install wget ca-certificates --allow
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 
 # Install Postgres
 apt update
-apt install postgresql postgresql-contrib
+apt install postgresql postgresql-contrib --allow
 service postgresql start
 
 # Set Default Password
