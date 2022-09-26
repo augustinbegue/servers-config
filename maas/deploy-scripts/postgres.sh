@@ -13,7 +13,7 @@ sudo -u postgres psql --command="ALTER USER postgres PASSWORD 'postgres';"
 
 # Alter Config Files
 echo "listen_addresses = '*'" >> /etc/postgresql/14/main/postgresql.conf
-echo "host all all 0.0.0.0/0 md5" > /etc/postgresql/14/main/pg_hba.conf
+echo "host all all all md5" > /etc/postgresql/14/main/pg_hba.conf
 
 # Finish
 systemctl restart postgresql
