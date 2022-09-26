@@ -21,7 +21,8 @@ systemctl restart postgresql
 ss -ntl | grep 5432
 if $? == 0
 then
-	echo "Postgres deployment successfull"
+	echo "\n\nPostgres deployment successfull\n"
+	return 0
 else
-	echo "Postgres deployment failed"
+	echo "\n\nPostgres deployment failed\n"
 	return 1
