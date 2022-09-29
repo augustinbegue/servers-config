@@ -11,6 +11,7 @@ maas admin ipranges create type=dynamic start_ip=10.10.10.200 end_ip=10.10.10.25
 maas admin vlan update $FABRIC_ID $VLAN_TAG dhcp_on=True primary_rack=$PRIMARY_RACK
 maas admin maas set-config name=upstream_dns value=8.8.8.8
 
+export IP_ADDRESS=$(ip -j route show default | jq -r '.[].prefsrc')
 maas admin vm-hosts create  password=password  type=lxd power_address=https://${IP_ADDRESS}:8443 project=maas
 
 ssh-keygen -q -t rsa -N "" -f "/home/abegue/.ssh/id_rsa"
