@@ -2,7 +2,6 @@ snap install --channel=3.2 maas
 snap install lxd
 snap refresh lxd
 
-cat /home/abegue/maas/deploy-scripts/docker.sh | bash
 cat /home/abegue/maas/deploy-scripts/postgres.sh | bash
 
 export MAAS_DBUSER=maas_user
