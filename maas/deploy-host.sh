@@ -28,4 +28,4 @@ apt-get install iptables-persistent -y
 cat /home/abegue/maas/lxd.cfg | lxd init --preseed
 lxd waitready
 
-maas init region+rack --database-uri "postgres://$MAAS_DBUSER:$MAAS_DBPASS@$HOSTNAME/$MAAS_DBNAME"
+maas init region+rack --database-uri "postgres://$MAAS_DBUSER:$MAAS_DBPASS@$HOSTNAME/$MAAS_DBNAME" --maas-url http://${IP_ADDRESS}:5240/MAAS
