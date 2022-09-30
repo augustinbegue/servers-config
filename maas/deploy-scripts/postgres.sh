@@ -22,7 +22,8 @@ ss -ntl | grep 5432
 if $? == 0
 then
 	echo "\n\nPostgres deployment successfull\n"
-	return 0
+	exit 0
 else
 	echo "\n\nPostgres deployment failed\n"
-	return 1
+	exit 1
+fi
